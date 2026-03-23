@@ -40,11 +40,16 @@ export function FormField({ children, className, error, helperText, label, requi
         <div className={cn("grid gap-2", className)}>
             <label className="text-sm font-medium leading-none text-foreground" htmlFor={controlId}>
                 <span>{label}</span>
-                {required ? <span className="ml-1 text-red-500">*</span> : null}
+                {required ? (
+                    <>
+                        <span aria-hidden="true" className="ml-1 text-red-500">*</span>
+                        <span className="sr-only"> required</span>
+                    </>
+                ) : null}
             </label>
             {control}
             {helperText ? <p className="text-sm text-muted-foreground" id={helperId}>{helperText}</p> : null}
-            {error ? <p className="text-sm font-medium text-red-600" id={errorId}>{error}</p> : null}
+            {error ? <p aria-live="polite" className="text-sm font-medium text-red-600" id={errorId} role="alert">{error}</p> : null}
         </div>
     );
 }
