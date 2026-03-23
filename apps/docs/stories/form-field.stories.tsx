@@ -47,3 +47,11 @@ export const Required: Story = {
         required: true
     }
 };
+
+export const GermanCopy: Story = {
+    args: {
+        helperText: "Wir verwenden diese Adresse ausschließlich für wichtige Konto-Benachrichtigungen.",
+        label: "Geschäftliche E-Mail-Adresse",
+        required: true
+    }
+};
