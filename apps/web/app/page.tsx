@@ -1,4 +1,6 @@
-import { Button } from "@repo/ui";
+import Link from "next/link";
+
+import { Button, buttonVariants, cn } from "@repo/ui";
 
 const variants = [
     { label: "Primary", variant: "primary" as const },
@@ -25,6 +27,9 @@ export default function HomePage() {
                                 {item.label}
                             </Button>
                         ))}
+                        <Link className={cn(buttonVariants({ variant: "outline" }), "bg-white")} href="/login">
+                            Open login page
+                        </Link>
                     </div>
                 </section>
                 <aside className="rounded-[1.5rem] border border-slate-200/70 bg-slate-950 p-8 text-slate-50 shadow-xl shadow-slate-900/20">
