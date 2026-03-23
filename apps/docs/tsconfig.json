@@ -1,9 +1,10 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
+        "baseUrl": "../../",
         "paths": {
             "@repo/ui": [
-                "../../packages/ui/src/index.ts"
+                "packages/ui/src/index.ts"
             ]
         }
     },
